@@ -1,0 +1,9 @@
+# Minimal Render Blueprint test – repo root only
+# Used to verify Deploy-to-Render button and Blueprint Path behavior.
+services:
+  - type: web
+    runtime: static
+    name: render-test-site
+    plan: free
+    buildCommand: mkdir -p dist && echo '<!DOCTYPE html><html><body><h1>Render Blueprint test OK</h1></body></html>' > dist/index.html
+    staticPublishPath: dist
